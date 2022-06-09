@@ -12,11 +12,11 @@ http
     console.log(req.url);
     res.writeHead(200, { "Content-Type": "text/html" });
     res.end(
-      req.url === "/index.html"
+      req.url === "/"
         ? index
-        : req.url === "/contact-me.html"
+        : req.url === "/contact-me"
         ? contact
-        : req.url === "/about.html"
+        : req.url === "/about"
         ? about
         : notFound
     );
