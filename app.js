@@ -1,6 +1,6 @@
 const http = require("http");
 const fs = require("fs");
-const port = 3000;
+const port = 8080;
 
 const index = fs.readFileSync("./index.html");
 const contact = fs.readFileSync("./contact-me.html");
@@ -21,6 +21,6 @@ http
         : notFound
     );
   })
-  .listen(port, "localhost");
+  .listen(port);
 
-console.log(`Server running at http://localhost:${port}/`);
+console.log(`Server running on port:${port}/`);
