@@ -1,6 +1,6 @@
 const http = require("http");
 const fs = require("fs");
-const port = 8080;
+const port = process.env.PORT || 3000;
 
 const index = fs.readFileSync("./index.html");
 const contact = fs.readFileSync("./contact-me.html");
