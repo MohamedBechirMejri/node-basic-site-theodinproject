@@ -19,5 +19,8 @@
   "homepage": "https://github.com/MohamedBechirMejri/node-basic-site-theodinproject#readme",
   "engines": {
     "node": "16.x"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
   }
 }
