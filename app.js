@@ -1,28 +1,18 @@
-const fs = require("fs");
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
 
-const index = fs.readFileSync("./index.html");
-const contact = fs.readFileSync("./contact-me.html");
-const about = fs.readFileSync("./about.html");
-const notFound = fs.readFileSync("./404.html");
-
 app.get("/", (req, res) => {
-  res.set("Content-Type", "text/html");
-  res.send(index);
+  res.sendFile("./index.html", { root: __dirname });
 });
 app.get("/contact-me", (req, res) => {
-  res.set("Content-Type", "text/html");
-  res.send(contact);
+  res.sendFile("./contact-me.html", { root: __dirname });
 });
 app.get("/about", (req, res) => {
-  res.set("Content-Type", "text/html");
-  res.send(about);
+  res.sendFile("./about.html", { root: __dirname });
 });
 app.get("*", (req, res) => {
-  res.set("Content-Type", "text/html");
-  res.send(notFound);
+  res.sendFile("./404.html", { root: __dirname });
 });
 
 app.listen(port, () => {
